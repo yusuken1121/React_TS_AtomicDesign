@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { PrimaryButton } from "./components/atoms/button/PrimaryButton.tsx";
+import { Home } from "./components/atoms/organisms/Home.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PrimaryButton children={"test button"} />,
+    element: <Home />,
   },
 ]);
 
