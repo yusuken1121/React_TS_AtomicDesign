@@ -1,5 +1,5 @@
-import { PrimaryButton } from "../button/PrimaryButton";
-import { SecondaryButton } from "../button/SecondaryButton";
+import { PrimaryButton } from "../atoms/button/PrimaryButton";
+import { SecondaryButton } from "../atoms/button/SecondaryButton";
 
 export const Home = () => {
   return (
