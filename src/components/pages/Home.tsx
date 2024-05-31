@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
-import { HeaderOnly } from "../templates/PageStyle";
+import { PageStyle } from "../templates/PageStyle";
+import { FC } from "react";
 
-export const Home = () => {
+export const Home: FC = () => {
   return (
-    <HeaderOnly>
+    <PageStyle>
       <main className="bg-slate-200 min-h-screen">
         <Outlet />
       </main>
-    </HeaderOnly>
+    </PageStyle>
   );
 };
