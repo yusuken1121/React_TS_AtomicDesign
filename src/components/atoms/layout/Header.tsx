@@ -8,7 +8,7 @@ export const Header: FC = () => {
         className="link-base mr-3 w-30 h-14 flex items-center justify-center"
         to="/"
       >
-        Home
+        Top
       </Link>
       <Link
         className="link-base mr-3 w-30 h-14 flex items-center justify-center"

@@ -3,8 +3,10 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Home } from "./components/organisms/Home.tsx";
 import { User } from "./components/organisms/User.tsx";
+import { Top } from "./components/pages/Top.tsx";
+import { Users } from "./components/pages/Users.tsx";
+import { Home } from "./components/pages/Home.tsx";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +15,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <User />,
+        element: <Top />,
+      },
+      {
+        path: "users",
+        element: <Users />,
       },
     ],
   },

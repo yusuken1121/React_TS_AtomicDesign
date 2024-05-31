@@ -1,3 +1,4 @@
+import { Footer } from "../atoms/layout/Footer";
 import { Header } from "../atoms/layout/Header";
 
 export const HeaderOnly = ({ children }: { children: React.ReactNode }) => {
@@ -5,6 +6,7 @@ export const HeaderOnly = ({ children }: { children: React.ReactNode }) => {
     <div>
       <Header />
       {children}
+      <Footer />
     </div>
   );
 };
