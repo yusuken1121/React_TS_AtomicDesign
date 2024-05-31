@@ -15,4 +15,16 @@
   .input-base {
     @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
   }
+  .table-base {
+    @apply w-3/4 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400;
+  }
+  .dd-base {
+    @apply px-6 py-3;
+  }
+  .tr-base {
+    @apply bg-white border-b dark:bg-gray-800 dark:border-gray-700;
+  }
+  .thead-base {
+    @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+  }
 }
