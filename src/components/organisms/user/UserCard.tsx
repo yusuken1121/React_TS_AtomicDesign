@@ -1,12 +1,14 @@
 import { FC } from "react";
 import { UserCardProps } from "../../../types/userCardProps";
+import { PrimaryButton } from "../../atoms/button/PrimaryButton";
 
-export const UserCard = ({
+export const UserCard: FC<UserCardProps> = ({
   name,
   email,
   tell,
   company,
   website,
+  isAdmin,
 }: UserCardProps) => {
   return (
     <div className="flex flex-col w-30 border-solid border-2 border-slate-500 rounded-lg m-3 bg-slate-400 p-3 box-border	">
@@ -35,6 +37,9 @@ export const UserCard = ({
           <dt className="flex-1">Website</dt>
           <dd className="dd-base flex-3">{website}</dd>
         </dl>
+      </div>
+      <div className="box-border mt-2">
+        {isAdmin ? <PrimaryButton>Edit</PrimaryButton> : null}
       </div>
     </div>
   );

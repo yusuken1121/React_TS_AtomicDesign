@@ -5,9 +5,9 @@ export const UserContext = createContext({});
 
 export const UserProvider = (props: ChildrenProps) => {
   const { children } = props;
-  const [name, setName] = useState("Aru");
+  const [userInfo, setUserInfo] = useState(null);
   return (
-    <UserContext.Provider value={{ name, setName }}>
+    <UserContext.Provider value={{ userInfo, setUserInfo }}>
       {children}
     </UserContext.Provider>
   );

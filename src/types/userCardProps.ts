@@ -5,4 +5,5 @@ export interface UserCardProps {
   tell: number;
   company: string;
   website: string;
+  isAdmin?: boolean;
 }

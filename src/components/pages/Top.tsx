@@ -1,11 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import { SecondaryButton } from "../atoms/button/SecondaryButton";
+import { UserContext } from "../../providers/UserProvider";
+import { useContext } from "react";
 
 export const Top = () => {
+  const { setUserInfo } = useContext(UserContext);
   const navigate = useNavigate();
-  const adminState = { role: "admin" };
-  const onClickAdmin = () => navigate("/users", { state: adminState });
-  const onClickGeneral = () => alert("Admin");
+  const onClickAdmin = () => {
+    const newUserInfo = { isAdmin: true };
+    setUserInfo(newUserInfo);
+    navigate("/users"); // pass newUserInfo directly because it can't be in time to reflect the value
+  };
+
+  const onClickGeneral = () => {
+    const newUserInfo = { isAdmin: false };
+    setUserInfo(newUserInfo);
+    navigate("/users");
+  };
 
   return (
     <div className=" pt-5 pl-2 flex flex-col items-center justify-center">

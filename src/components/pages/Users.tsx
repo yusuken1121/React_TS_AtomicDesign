@@ -2,8 +2,11 @@ import { FC, useContext } from "react";
 import { UserCardProps } from "../../types/userCardProps";
 import { SearchInput } from "../Molecules/SearchInput";
 import { UserCard } from "../organisms/user/UserCard";
-import { useLocation } from "react-router-dom";
 import { UserContext } from "../../providers/UserProvider";
+
+interface UserInfo {
+  isAdmin: boolean;
+}
 
 const users: UserCardProps[] = [...Array(10).keys()].map((val) => {
   return {
@@ -17,11 +20,8 @@ const users: UserCardProps[] = [...Array(10).keys()].map((val) => {
 });
 
 export const Users: FC = () => {
-  const location = useLocation();
-  const role = location.state.role;
-
-  const context = useContext(UserContext);
-  console.log(context);
+  const { userInfo } = useContext(UserContext);
+  const isAdmin: boolean = userInfo.isAdmin;
   return (
     <div className="p-3">
       <div className="flex">
@@ -39,6 +39,7 @@ export const Users: FC = () => {
               email={user.email}
               company={user.company}
               website={user.website}
+              isAdmin={isAdmin}
             />
           );
         })}
