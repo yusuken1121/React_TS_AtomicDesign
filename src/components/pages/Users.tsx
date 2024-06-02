@@ -2,6 +2,7 @@ import { FC } from "react";
 import { UserCardProps } from "../../types/userCardProps";
 import { SearchInput } from "../Molecules/SearchInput";
 import { UserCard } from "../organisms/user/UserCard";
+import { useLocation } from "react-router-dom";
 
 const users: UserCardProps[] = [...Array(10).keys()].map((val) => {
   return {
@@ -23,9 +24,10 @@ export const Users: FC = () => {
       </div>
 
       <div className="flex flex-wrap items-start justify-center">
-        {users.map((user) => {
+        {users.map((user: UserCardProps) => {
           return (
             <UserCard
+              key={user.id}
               name={user.name}
               tell={user.tell}
               email={user.email}
